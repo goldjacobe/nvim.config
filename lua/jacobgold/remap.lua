@@ -1,12 +1,11 @@
 vim.g.mapleader = " "
 
-
 -- explore
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>E", function()
 	vim.cmd('w')
 	vim.cmd('Explore')
-end, { silent = true})
+end, { silent = true })
 
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
@@ -44,11 +43,11 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 -- yank to clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- delete without writing to buffer
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- capital Q is the worst thing ever apparently
 vim.keymap.set("n", "Q", "<nop>")
@@ -63,8 +62,15 @@ vim.keymap.set("n", "<leader>lj", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>lk", "<cmd>lnext<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- run yarn prettier on save yay
+vim.keymap.set("n", "<leader>w", function()
+	vim.cmd('w')
+	vim.cmd('!yarn prettier -w ' .. vim.fn.expand('%:p'))
+	vim.api.nvim_input('<ENTER>')
+end, { silent = true })
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
