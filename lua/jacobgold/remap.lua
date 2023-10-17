@@ -19,6 +19,8 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- keep cursor in the middle of the screen as you scroll up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-f>", "<C-f>zz")
+vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
 -- keep cursor in the middle when you search
 vim.keymap.set("n", "n", "nzzzv")
