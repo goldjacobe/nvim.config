@@ -13,9 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.2',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		'nvim-telescope/telescope-file-browser.nvim',
+		dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
 	},
 	{
 		'sainnhe/gruvbox-material',
@@ -83,14 +82,14 @@ require("lazy").setup({
 		branch = 'v2.x',
 		dependencies = {
 			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },           -- Required
-			{ 'williamboman/mason.nvim' },         -- Optional
+			{ 'neovim/nvim-lspconfig' },    -- Required
+			{ 'williamboman/mason.nvim' },  -- Optional
 			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
 			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },   -- Required
+			{ 'hrsh7th/nvim-cmp' }, -- Required
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-			{ 'L3MON4D3/LuaSnip' },   -- Required
+			{ 'L3MON4D3/LuaSnip' }, -- Required
 		}
 	},
 	{
