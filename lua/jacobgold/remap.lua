@@ -8,6 +8,9 @@ vim.keymap.set("n", "<leader>E", function()
 	vim.cmd('Explore')
 end, { silent = true})
 
+-- don't copy to register when deleting characters
+vim.keymap.set("n", "x", '"_x')
+
 -- ThePrimeagen
 -- move lines up and down in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
