@@ -31,6 +31,10 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
+		'alexghergh/nvim-tmux-navigation',
+		cond = not vim.g.vscode
+	},
+	{
 		'ThePrimeagen/harpoon',
 		cond = not vim.g.vscode
 	},
