@@ -1,4 +1,4 @@
-if not vim.g.vscode then 
+if not vim.g.vscode then
     local lsp = require('lsp-zero')
 
     lsp.preset('recommended')
@@ -35,7 +35,7 @@ if not vim.g.vscode then
         vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-        vim.keymap.set("n", "<leader>.", function() 
+        vim.keymap.set("n", "<leader>.", function()
             vim.lsp.buf.code_action({
                 filter = function(a) return a.isPreferred end,
                 apply = true
