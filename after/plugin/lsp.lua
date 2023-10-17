@@ -50,5 +50,7 @@ if not vim.g.vscode then
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     end)
 
+	require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
     lsp.setup()
 end
