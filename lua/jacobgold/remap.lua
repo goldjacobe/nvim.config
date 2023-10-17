@@ -56,10 +56,11 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- quickfix navigation
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>ck", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<leader>cj", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>cc", "<cmd>cclose")
+vim.keymap.set("n", "<leader>lj", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>lk", "<cmd>lnext<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
