@@ -18,10 +18,6 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
-		'prettier/vim-prettier',
-		cond = not vim.g.vscode
-	},
-	{
 		'sainnhe/gruvbox-material',
 		cond = not vim.g.vscode
 	},
