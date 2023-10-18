@@ -14,7 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		'nvim-telescope/telescope-file-browser.nvim',
-		dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
+		dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+		cond = not vim.g.vscode
 	},
 	{
 		'sainnhe/gruvbox-material',
