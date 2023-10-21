@@ -13,6 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		cond = not vim.g.vscode
+	},
+	{
 		'nvim-telescope/telescope-file-browser.nvim',
 		dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
 		cond = not vim.g.vscode
