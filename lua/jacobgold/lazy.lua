@@ -18,6 +18,11 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
+		'nvim-telescope/telescope-fzf-native.nvim',
+		build =
+		'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+	},
+	{
 		'nvim-telescope/telescope-file-browser.nvim',
 		dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
 		cond = not vim.g.vscode
@@ -92,14 +97,14 @@ require("lazy").setup({
 		branch = 'v2.x',
 		dependencies = {
 			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },    -- Required
-			{ 'williamboman/mason.nvim' },  -- Optional
+			{ 'neovim/nvim-lspconfig' },          -- Required
+			{ 'williamboman/mason.nvim' },        -- Optional
 			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
 			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' }, -- Required
+			{ 'hrsh7th/nvim-cmp' },  -- Required
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-			{ 'L3MON4D3/LuaSnip' }, -- Required
+			{ 'L3MON4D3/LuaSnip' },  -- Required
 		}
 	},
 	{
