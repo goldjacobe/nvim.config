@@ -1,5 +1,11 @@
 vim.g.mapleader = " "
 
+-- tab stuff
+vim.keymap.set({"n", "v"}, "<leader>te", vim.cmd.tabedit)
+vim.keymap.set({"n", "v"}, "<leader>tc", vim.cmd.tabclose)
+vim.keymap.set({"n", "v"}, "<leader>tn", vim.cmd.tabnext)
+vim.keymap.set({"n", "v"}, "<leader>tp", vim.cmd.tabprev)
+
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
 
