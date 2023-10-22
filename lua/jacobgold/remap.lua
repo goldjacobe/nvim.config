@@ -1,12 +1,5 @@
 vim.g.mapleader = " "
 
--- explore
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>E", function()
-	vim.cmd('w')
-	vim.cmd('Explore')
-end, { silent = true })
-
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
 
