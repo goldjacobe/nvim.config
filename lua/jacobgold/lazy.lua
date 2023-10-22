@@ -15,6 +15,7 @@ require("lazy").setup({
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		cond = not vim.g.vscode
 	},
 	{
 		'nvim-lualine/lualine.nvim',
@@ -23,6 +24,7 @@ require("lazy").setup({
 	},
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
+		cond = not vim.g.vscode,
 		build =
 		'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 	},
