@@ -1,3 +1,6 @@
+-- always show tabline
+vim.opt.showtabline = 2
+
 -- line numbers on
 vim.opt.nu = true
 -- relative line numbers
