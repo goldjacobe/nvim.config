@@ -1,6 +1,9 @@
 if not vim.g.vscode then
-
 	require("telescope").setup {
+		defaults = {
+			layout_config = { prompt_position = 'top' },
+			sorting_strategy = 'ascending'
+		},
 		extensions = {
 			file_browser = {
 				theme = "ivy",
@@ -21,12 +24,15 @@ if not vim.g.vscode then
 	require("telescope").load_extension('fzf')
 
 	local builtin = require('telescope.builtin')
-	vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-	vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
-	vim.keymap.set('n', '<leader>fs', function()
-		builtin.grep_string({ search = vim.fn.input("Grep > ") });
-	end)
+	vim.keymap.set({ 'n', 'v' }, '<leader>ff', builtin.find_files, {})
+	vim.keymap.set({ 'n', 'v' }, '<leader>fg', builtin.git_files, {})
+	vim.keymap.set({ 'n', 'v' }, '<leader>fl', builtin.live_grep, {})
+	vim.keymap.set({ 'n', 'v' }, '<leader>fs', builtin.grep_string, {})
 
+	vim.keymap.set({ 'n', 'v' }, '<leader>fq',builtin.quickfix,{})
+	vim.keymap.set({ 'n', 'v' }, '<leader>ftb', builtin.builtin, {})
+	vim.keymap.set({ 'n', 'v' }, '<leader>fgs', builtin.git_status, {})
+	vim.keymap.set({ 'n', 'v' }, '<leader>fcb',builtin.current_buffer_fuzzy_find,{})
 	require("telescope").load_extension "file_browser"
 
 	vim.api.nvim_set_keymap(
