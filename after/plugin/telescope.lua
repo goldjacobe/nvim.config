@@ -29,10 +29,10 @@ if not vim.g.vscode then
 	vim.keymap.set({ 'n', 'v' }, '<leader>fl', builtin.live_grep, {})
 	vim.keymap.set({ 'n', 'v' }, '<leader>fs', builtin.grep_string, {})
 
-	vim.keymap.set({ 'n', 'v' }, '<leader>fq',builtin.quickfix,{})
+	vim.keymap.set({ 'n', 'v' }, '<leader>fq', builtin.quickfix, {})
 	vim.keymap.set({ 'n', 'v' }, '<leader>ftb', builtin.builtin, {})
 	vim.keymap.set({ 'n', 'v' }, '<leader>fgs', builtin.git_status, {})
-	vim.keymap.set({ 'n', 'v' }, '<leader>fcb',builtin.current_buffer_fuzzy_find,{})
+	vim.keymap.set({ 'n', 'v' }, '<leader>fcb', builtin.current_buffer_fuzzy_find, {})
 	require("telescope").load_extension "file_browser"
 
 	vim.api.nvim_set_keymap(
