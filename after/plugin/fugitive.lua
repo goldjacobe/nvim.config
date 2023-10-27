@@ -1,5 +1,6 @@
 -- open or focus fugitive
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git);
+vim.keymap.set('n', '<leader>gb', function() vim.cmd('Git blame') end);
 
 -- close fugitive
 vim.keymap.set('n', '<leader>gq', function()
