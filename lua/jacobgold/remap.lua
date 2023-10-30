@@ -1,5 +1,20 @@
 vim.g.mapleader = " "
 
+-- switch a split to visual mode
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>vh",
+	":vertical wincmd H <CR>",
+	{ silent = true }
+)
+
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>vl",
+	":vertical wincmd L <CR>",
+	{ silent = true }
+)
+
 -- delete a file and go to last buffer
 vim.keymap.set({ "n", "v" }, "<leader>rm", function()
 	local buf = vim.api.nvim_get_current_buf()
