@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
 
+-- splits
+vim.keymap.set({"n", "v"}, "<leader>\\", vim.cmd.vsplit)
+vim.keymap.set({"n", "v"}, "<leader>/", vim.cmd.split)
+
 -- tab stuff
 vim.keymap.set({"n", "v"}, "<leader>te", vim.cmd.tabedit)
 vim.keymap.set({"n", "v"}, "<leader>tc", vim.cmd.tabclose)
