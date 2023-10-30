@@ -1,5 +1,16 @@
 vim.g.mapleader = " "
 
+-- delete a file and go to last buffer
+vim.keymap.set({ "n", "v" }, "<leader>rm", function()
+	local buf = vim.api.nvim_get_current_buf()
+	local path = vim.api.nvim_buf_get_name(buf)
+	os.remove(path)
+	local removed_buffer_num = vim.api.nvim_buf_get_number(buf)
+	vim.cmd.bprevious()
+	vim.cmd('bdelete!' .. removed_buffer_num)
+	print('Deleted ' .. path)
+end)
+
 -- splits
 vim.keymap.set({ "n", "v" }, "<leader>\\", vim.cmd.vsplit)
 vim.keymap.set({ "n", "v" }, "<leader>/", vim.cmd.split)
