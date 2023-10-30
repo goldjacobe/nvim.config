@@ -6,6 +6,10 @@ vim.keymap.set({"n", "v"}, "<leader>tc", vim.cmd.tabclose)
 vim.keymap.set({"n", "v"}, "<leader>tn", vim.cmd.tabnext)
 vim.keymap.set({"n", "v"}, "<leader>tp", vim.cmd.tabprev)
 
+-- buffer stuff
+vim.keymap.set({"n", "v"}, "<leader>bn", vim.cmd.bnext)
+vim.keymap.set({"n", "v"}, "<leader>bp", vim.cmd.bprev)
+
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
 

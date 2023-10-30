@@ -5,6 +5,12 @@ if not vim.g.vscode then
 			'fugitive',
 			'mason',
 			'trouble'
+		},
+		sections = {
+			lualine_c = {
+				'buffers',
+				separator = nil
+			},
 		}
 	}
 end
