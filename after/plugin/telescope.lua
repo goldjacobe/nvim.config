@@ -27,6 +27,7 @@ if not vim.g.vscode then
 	local builtin = require('telescope.builtin')
 	vim.keymap.set({ 'n', 'v' }, '<leader>ff', builtin.find_files, {})
 	vim.keymap.set({ 'n', 'v' }, '<leader>fg', builtin.git_files, {})
+	vim.keymap.set({ 'n', 'v' }, '<leader>fo', builtin.buffers, {})
 	vim.keymap.set({ 'n', 'v' }, '<leader>fl', builtin.live_grep, {})
 	vim.keymap.set({ 'n', 'v' }, '<leader>fs', builtin.grep_string, {})
 	vim.keymap.set({ 'n', 'v' }, '<leader>fh', function()
