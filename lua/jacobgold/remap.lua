@@ -1,19 +1,19 @@
 vim.g.mapleader = " "
 
 -- splits
-vim.keymap.set({"n", "v"}, "<leader>\\", vim.cmd.vsplit)
-vim.keymap.set({"n", "v"}, "<leader>/", vim.cmd.split)
+vim.keymap.set({ "n", "v" }, "<leader>\\", vim.cmd.vsplit)
+vim.keymap.set({ "n", "v" }, "<leader>/", vim.cmd.split)
 
 -- tab stuff
-vim.keymap.set({"n", "v"}, "<leader>te", vim.cmd.tabedit)
-vim.keymap.set({"n", "v"}, "<leader>tc", vim.cmd.tabclose)
-vim.keymap.set({"n", "v"}, "<leader>tn", vim.cmd.tabnext)
-vim.keymap.set({"n", "v"}, "<leader>tp", vim.cmd.tabprev)
+vim.keymap.set({ "n", "v" }, "<leader>te", vim.cmd.tabedit)
+vim.keymap.set({ "n", "v" }, "<leader>tc", vim.cmd.tabclose)
+vim.keymap.set({ "n", "v" }, "<leader>tn", vim.cmd.tabnext)
+vim.keymap.set({ "n", "v" }, "<leader>tp", vim.cmd.tabprev)
 
 -- buffer stuff
-vim.keymap.set({"n", "v"}, "<leader>bn", vim.cmd.bnext)
-vim.keymap.set({"n", "v"}, "<leader>bp", vim.cmd.bprev)
-vim.keymap.set({"n", "v"}, "<leader>bd", vim.cmd.bd)
+vim.keymap.set({ "n", "v" }, "<leader>bn", vim.cmd.bnext)
+vim.keymap.set({ "n", "v" }, "<leader>bp", vim.cmd.bprev)
+vim.keymap.set({ "n", "v" }, "<leader>bd", vim.cmd.bd)
 
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
@@ -71,8 +71,8 @@ vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>")
 -- vim.keymap.set("n", "<leader>lk", "<cmd>lnext<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>" )
-vim.keymap.set("n", "<leader>-x", "<cmd>!chmod -x %<CR>" )
+vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>")
+vim.keymap.set("n", "<leader>-x", "<cmd>!chmod -x %<CR>")
 
 -- run yarn prettier on save yay
 vim.keymap.set("n", "<leader>w", function()
