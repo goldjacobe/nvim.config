@@ -30,16 +30,19 @@ require("lazy").setup({
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
-		}
+		},
+		cond = not vim.g.vscode
 	},
 	{
 		'rmagatti/auto-session',
+		cond = not vim.g.vscode
 	},
 	{
 		"folke/twilight.nvim",
 	},
 	{
 		"folke/zen-mode.nvim",
+		cond = not vim.g.vscode
 	},
 	{
 		'numToStr/Comment.nvim',
