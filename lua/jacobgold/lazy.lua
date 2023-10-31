@@ -13,6 +13,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		'rmagatti/auto-session',
+	},
+	{
+		"folke/zen-mode.nvim",
+	},
+	{
 		'numToStr/Comment.nvim',
 	},
 	{
