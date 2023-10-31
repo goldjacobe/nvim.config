@@ -13,6 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		'toppair/reach.nvim',
+		cond = not vim.g.vscode
+	},
+	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		init = function()
