@@ -31,6 +31,9 @@ require("lazy").setup({
 		'rmagatti/auto-session',
 	},
 	{
+	  "folke/twilight.nvim",
+	},
+	{
 		"folke/zen-mode.nvim",
 	},
 	{
