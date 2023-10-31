@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
 
+-- add new lines in normal mode (works for multiple!!!)
+vim.keymap.set("n", "<leader>o", "o<ESC>", { desc = 'New line below' })
+vim.keymap.set("n", "<leader>O", "O<ESC>", { desc = 'New line above' })
+
 -- switch a split to vertical
 vim.keymap.set(
 	{ "n", "v" },
