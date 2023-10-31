@@ -27,6 +27,10 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- case insensistive searching
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 vim.opt.termguicolors = true
 
 -- keep margin of 8 lines above/below
