@@ -1,5 +1,12 @@
 vim.g.mapleader = " "
 
+-- zen mode
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>z",
+	require('zen-mode').toggle
+)
+
 -- switch a split to visual mode
 vim.keymap.set(
 	{ "n", "v" },
