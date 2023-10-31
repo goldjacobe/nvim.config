@@ -1,18 +1,18 @@
 vim.g.mapleader = " "
 
--- switch a split to visual mode
+-- switch a split to vertical
 vim.keymap.set(
 	{ "n", "v" },
 	"<leader>vh",
 	":vertical wincmd H <CR>",
-	{ silent = true }
+	{ silent = true, desc = 'Move window to left' }
 )
 
 vim.keymap.set(
 	{ "n", "v" },
 	"<leader>vl",
 	":vertical wincmd L <CR>",
-	{ silent = true }
+	{ silent = true, desc = 'Move window to right' }
 )
 
 -- delete a file and go to last buffer
@@ -24,18 +24,18 @@ vim.keymap.set({ "n", "v" }, "<leader>rm", function()
 	vim.cmd.bprevious()
 	vim.cmd('bdelete!' .. removed_buffer_num)
 	print('Deleted ' .. path)
-end)
+end, { desc = 'Delete the current file and its buffer' })
 
 -- splits
-vim.keymap.set({ "n", "v" }, "<leader>\\", vim.cmd.vsplit)
-vim.keymap.set({ "n", "v" }, "<leader>/", vim.cmd.split)
+vim.keymap.set({ "n", "v" }, "<leader>\\", vim.cmd.vsplit, { desc = 'Vertical split' })
+vim.keymap.set({ "n", "v" }, "<leader>/", vim.cmd.split, { desc = 'Horizontal split' })
 
 -- buffer stuff
-vim.keymap.set({ "n", "v" }, "<leader>td", vim.cmd.bd)
-vim.keymap.set({ "n", "v" }, "<leader>th", vim.cmd.bfirst)
-vim.keymap.set({ "n", "v" }, "<leader>tj", vim.cmd.bprev)
-vim.keymap.set({ "n", "v" }, "<leader>tk", vim.cmd.bnext)
-vim.keymap.set({ "n", "v" }, "<leader>tl", vim.cmd.blast)
+vim.keymap.set({ "n", "v" }, "<leader>td", vim.cmd.bd, { desc = 'Delete buffer' })
+vim.keymap.set({ "n", "v" }, "<leader>th", vim.cmd.bfirst, { desc = 'First buffer' })
+vim.keymap.set({ "n", "v" }, "<leader>tj", vim.cmd.bprev, { desc = 'Previous buffer' })
+vim.keymap.set({ "n", "v" }, "<leader>tk", vim.cmd.bnext, { desc = 'Next buffer' })
+vim.keymap.set({ "n", "v" }, "<leader>tl", vim.cmd.blast, { desc = 'Last buffer' })
 
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
@@ -69,12 +69,12 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
 -- paste over selection without overwriting buffer
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste and don't yank" })
 
 -- next greatest remap ever : asbjornHaland
 -- yank to clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = 'Copy to clipboard' })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = 'Copy line to clipboard' })
 
 -- delete without writing to buffer
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
@@ -82,20 +82,26 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- capital Q is the worst thing ever apparently
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = 'LSP format' })
 
 -- quickfix navigation
-vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>")
+vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", { desc = 'Next quickfix item' })
+vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", { desc = 'Previous quickfix item' })
+vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>", { desc = 'Close quickfix window' })
 -- TODO figure out how to make these the same as above when loc window open
 -- vim.keymap.set("n", "<leader>lj", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>lk", "<cmd>lnext<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>")
-vim.keymap.set("n", "<leader>-x", "<cmd>!chmod -x %<CR>")
+vim.keymap.set(
+	"n",
+	"<leader>s",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = 'Replace current word' }
+)
+
+vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>", { desc = 'Make current file executable' })
+vim.keymap.set("n", "<leader>-x", "<cmd>!chmod -x %<CR>", { desc = 'Make current file non-executable' })
 
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
-end)
+end, { desc = 'Source current buffer' })

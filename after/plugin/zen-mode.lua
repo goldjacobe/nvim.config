@@ -2,5 +2,6 @@
 vim.keymap.set(
 	{ "n", "v" },
 	"<leader>z",
-	require('zen-mode').toggle
+	require('zen-mode').toggle,
+	{ desc = 'Zen mode' }
 )
