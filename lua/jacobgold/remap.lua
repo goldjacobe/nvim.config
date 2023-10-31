@@ -100,13 +100,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>+x", "<cmd>!chmod +x %<CR>")
 vim.keymap.set("n", "<leader>-x", "<cmd>!chmod -x %<CR>")
 
--- run yarn prettier on save yay
-vim.keymap.set("n", "<leader>w", function()
-	vim.cmd('w')
-	vim.cmd('!yarn prettier -w ' .. vim.fn.expand('%:p'))
-	vim.api.nvim_input('<ENTER>')
-end, { silent = true })
-
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end)
