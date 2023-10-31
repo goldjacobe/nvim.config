@@ -4,6 +4,14 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>o", "o<ESC>", { desc = 'New line below' })
 vim.keymap.set("n", "<leader>O", "O<ESC>", { desc = 'New line above' })
 
+-- swap splits
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>vx",
+	":wincmd x <CR>",
+	{ silent = true, desc = 'Swap windows' }
+)
+
 -- switch a split to vertical
 vim.keymap.set(
 	{ "n", "v" },
