@@ -37,16 +37,12 @@ end)
 vim.keymap.set({ "n", "v" }, "<leader>\\", vim.cmd.vsplit)
 vim.keymap.set({ "n", "v" }, "<leader>/", vim.cmd.split)
 
--- tab stuff
-vim.keymap.set({ "n", "v" }, "<leader>te", vim.cmd.tabedit)
-vim.keymap.set({ "n", "v" }, "<leader>tc", vim.cmd.tabclose)
-vim.keymap.set({ "n", "v" }, "<leader>tn", vim.cmd.tabnext)
-vim.keymap.set({ "n", "v" }, "<leader>tp", vim.cmd.tabprev)
-
 -- buffer stuff
-vim.keymap.set({ "n", "v" }, "<leader>bn", vim.cmd.bnext)
-vim.keymap.set({ "n", "v" }, "<leader>bp", vim.cmd.bprev)
-vim.keymap.set({ "n", "v" }, "<leader>bd", vim.cmd.bd)
+vim.keymap.set({ "n", "v" }, "<leader>td", vim.cmd.bd)
+vim.keymap.set({ "n", "v" }, "<leader>th", vim.cmd.bfirst)
+vim.keymap.set({ "n", "v" }, "<leader>tj", vim.cmd.bprev)
+vim.keymap.set({ "n", "v" }, "<leader>tk", vim.cmd.bnext)
+vim.keymap.set({ "n", "v" }, "<leader>tl", vim.cmd.blast)
 
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
