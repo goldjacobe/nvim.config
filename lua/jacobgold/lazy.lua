@@ -139,14 +139,9 @@ require("lazy").setup({
 			{ 'L3MON4D3/LuaSnip' },  -- Required
 		}
 	},
+
 	{
-		'zbirenbaum/copilot.lua',
+		'github/copilot.vim',
 		cond = not vim.g.vscode
-	},
-	{
-		"zbirenbaum/copilot-cmp",
-		config = function()
-			require("copilot_cmp").setup()
-		end
 	}
 })
