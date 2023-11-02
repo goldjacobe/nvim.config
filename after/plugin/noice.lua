@@ -21,4 +21,17 @@ if not vim.g.vscode then
 			lsp_doc_border = false,    -- add a border to hover docs and signature help
 		},
 	})
+
+
+	vim.keymap.set("n", "<leader>nl", function()
+		require("noice").cmd("last")
+	end, { desc = 'Show last message' })
+
+	vim.keymap.set("n", "<leader>nh", function()
+		require("noice").cmd("history")
+	end, { desc = 'Message history' })
+
+	vim.keymap.set("n", "<leader>fn", function()
+		require("noice").cmd("telescope")
+	end, { desc = 'Noice' })
 end
