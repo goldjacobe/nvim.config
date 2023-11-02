@@ -62,6 +62,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- keep cursor in the same place when you append next line to current
 vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "gJ", "mzgJ`z")
 
 -- keep cursor in the middle of the screen as you scroll up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
