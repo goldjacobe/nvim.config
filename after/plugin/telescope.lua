@@ -25,6 +25,9 @@ if not vim.g.vscode then
 	require("telescope").load_extension('harpoon')
 
 	local builtin = require('telescope.builtin')
+	vim.keymap.set({ 'n', 'v' }, '<leader>fr', function()
+		vim.cmd('Telescope resume')
+	end, { desc = 'Resume last telescope' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>ff', builtin.find_files, { desc = 'Files' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fg', builtin.git_files, { desc = 'Git files' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fG', builtin.git_status, { desc = 'Git status' })
