@@ -15,15 +15,20 @@ if not vim.g.vscode then
 		'eslint',
 	})
 
- lsp.set_sign_icons({
-      error = '✘',
-      warn = '▲',
-      hint = '⚑',
-      info = '»'
-    })
+	lsp.set_sign_icons({
+		error = '✘',
+		warn  = '▲',
+		hint  = '⚑',
+		info  = '»',
+	})
 
-	lsp.on_attach(function(client, bufnr)
+	lsp.on_attach(function(name, bufnr)
 		lsp.default_keymaps({ buffer = bufnr })
+		-- don't format on save for tsserver
+		-- because we use prettier for that
+		if (name ~= 'tsserver') then
+			lsp.buffer_autoformat()
+		end
 		vim.keymap.set("n", "<leader>.", function()
 			vim.lsp.buf.code_action({
 				filter = function(a) return a.isPreferred end,
