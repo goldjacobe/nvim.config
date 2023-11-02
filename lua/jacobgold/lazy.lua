@@ -81,6 +81,10 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
+		'Wansmer/treesj',
+		cond = not vim.g.vscode
+	},
+	{
 		"nvim-treesitter/nvim-treesitter-context",
 		cond = not vim.g.vscode
 	},
