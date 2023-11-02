@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+-- toggle wrap
+vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = 'Toggle wrap' })
+
 -- add new lines in normal mode (works for multiple!!!)
 vim.keymap.set("n", "<leader>o", "o<ESC>", { desc = 'New line below' })
 vim.keymap.set("n", "<leader>O", "O<ESC>", { desc = 'New line above' })
