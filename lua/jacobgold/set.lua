@@ -1,3 +1,6 @@
+-- cursorline
+vim.opt.cursorline = true
+
 -- always show tabline
 vim.opt.showtabline = 2
 
