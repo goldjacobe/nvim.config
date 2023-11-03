@@ -21,4 +21,10 @@ if not vim.g.vscode then
 			additional_vim_regex_highlighting = false,
 		},
 	}
+
+	-- folding
+	vim.opt.foldmethod = 'expr'
+	vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+	vim.opt.foldlevelstart = 1
+	vim.opt.foldenable = false
 end
