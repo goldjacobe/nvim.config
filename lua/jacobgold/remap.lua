@@ -101,9 +101,9 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = 'LSP format' })
 
 -- quickfix navigation
-vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", { desc = 'Next quickfix item' })
-vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", { desc = 'Previous quickfix item' })
-vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>", { desc = 'Close quickfix window' })
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz", { desc = 'Next quickfix item' })
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz", { desc = 'Previous quickfix item' })
+vim.keymap.set("n", "<leader>q", "<cmd>cclose<CR>", { desc = 'Close quickfix window' })
 -- TODO figure out how to make these the same as above when loc window open
 -- vim.keymap.set("n", "<leader>lj", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>lk", "<cmd>lnext<CR>zz")
