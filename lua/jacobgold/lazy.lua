@@ -13,6 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		'gorbit99/codewindow.nvim',
+		cond = not vim.g.vscode
+	},
+	{
 		'toppair/reach.nvim',
 		cond = not vim.g.vscode
 	},
