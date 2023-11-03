@@ -1,12 +1,10 @@
-function ColorMyPencils(color)
-	color = color or "gruvbox-material"
-    vim.cmd.colorscheme(color)
-
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
-end
-
 if not vim.g.vscode then
-    ColorMyPencils()
+	local bamboo = require('bamboo')
+	bamboo.setup {
+		-- Main options --
+		-- NOTE: to use the light theme, set `vim.o.background = 'light'`
+		style = 'multiplex',           -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
+		toggle_style_key = '<leader>ct', -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
+	}
+	bamboo.load()
 end

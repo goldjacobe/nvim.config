@@ -77,6 +77,22 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
+		'rose-pine/neovim',
+		cond = not vim.g.vscode
+	},
+	{
+		"catppuccin/nvim",
+		cond = not vim.g.vscode
+	},
+	{
+		"ribru17/bamboo.nvim",
+		cond = not vim.g.vscode
+	},
+	{
+		"lewpoly/sherbet.nvim",
+		cond = not vim.g.vscode
+	},
+	{
 		'sainnhe/gruvbox-material',
 		cond = not vim.g.vscode
 	},
