@@ -22,7 +22,7 @@ if not vim.g.vscode then
 		info  = '»',
 	})
 
-	lsp.on_attach(function(name, bufnr)
+	lsp.on_attach(function(_, bufnr)
 		lsp.default_keymaps({ buffer = bufnr })
 
 		vim.keymap.set("n", "<leader>.", function()
