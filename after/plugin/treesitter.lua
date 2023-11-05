@@ -27,7 +27,8 @@ if not vim.g.vscode then
 				-- set to false if you have an `updatetime` of ~100.
 				clear_on_cursor_move = true,
 			},
-			highlight_current_scope = { enable = true },
+			-- I don't really like this, TSContext is better
+			-- highlight_current_scope = { enable = true },
 			smart_rename = {
 				enable = true,
 				-- assign keymaps to false to disable them, e.g. `smart_rename = false`.
