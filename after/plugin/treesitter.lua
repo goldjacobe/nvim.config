@@ -20,8 +20,106 @@ if not vim.g.vscode then
 			-- Instead of true it can also be a list of languages
 			additional_vim_regex_highlighting = false,
 		},
-	}
 
+		refactor = {
+			highlight_definitions = {
+				enable = true,
+				-- set to false if you have an `updatetime` of ~100.
+				clear_on_cursor_move = true,
+			},
+			highlight_current_scope = { enable = true },
+			smart_rename = {
+				enable = true,
+				-- assign keymaps to false to disable them, e.g. `smart_rename = false`.
+				keymaps = {
+					smart_rename = "<leader>rr",
+				},
+			},
+		},
+
+		textobjects = {
+			select = {
+				enable = true,
+				lookahead = true,
+				keymaps = {
+					["aa"] = { query = "@parameter.outer", desc = 'a parameter' },
+					["ia"] = { query = "@parameter.inner", desc = 'inner parameter' },
+					["ac"] = { query = "@class.outer", desc = 'a class' },
+					["ic"] = { query = "@class.inner", desc = 'inner class' },
+					["af"] = { query = "@function.outer", desc = 'a function' },
+					["if"] = { query = "@function.inner", desc = 'inner function' },
+					["ai"] = { query = "@call.outer", desc = 'a call' },
+					["ii"] = { query = "@call.inner", desc = 'inner call' },
+					["ak"] = { query = "@block.outer", desc = 'a block' },
+					["ik"] = { query = "@block.inner", desc = 'inner block' },
+					["al"] = { query = "@loop.outer", desc = 'a loop' },
+					["il"] = { query = "@loop.inner", desc = 'inner loop' },
+					["ar"] = { query = "@regex.outer", desc = 'a regex' },
+					["ir"] = { query = "@regex.inner", desc = 'inner regex' },
+					["gc"] = { query = "@comment.outer", desc = 'comment' },
+				},
+			},
+
+			swap = {
+				enable = true,
+				swap_previous = {
+					["<leader>S["] = "@parameter.inner",
+				},
+				swap_next = {
+					["<leader>S]"] = "@parameter.inner",
+				},
+			},
+
+			move = {
+				enable = true,
+				set_jumps = true, -- whether to set jumps in the jumplist
+				goto_next_start = {
+					["]a"] = "@parameter.inner",
+					["]c"] = "@class.outer",
+					["]f"] = "@function.outer",
+					["]i"] = "@call.outer",
+					["]k"] = "@block.outer",
+					["]l"] = "@loop.outer",
+					["]r"] = "@regex.outer",
+				},
+				goto_next_end = {
+					["]A"] = "@parameter.inner",
+					["]C"] = "@class.outer",
+					["]F"] = "@function.outer",
+					["]I"] = "@call.outer",
+					["]K"] = "@block.outer",
+					["]L"] = "@loop.outer",
+					["]R"] = "@regex.outer",
+				},
+				goto_previous_start = {
+					["[a"] = "@parameter.inner",
+					["[c"] = "@class.outer",
+					["[f"] = "@function.outer",
+					["[i"] = "@call.outer",
+					["[k"] = "@block.outer",
+					["[l"] = "@loop.outer",
+					["[r"] = "@regex.outer",
+				},
+				goto_previous_end = {
+					["[A"] = "@parameter.inner",
+					["[C"] = "@class.outer",
+					["[F"] = "@function.outer",
+					["[I"] = "@call.outer",
+					["[K"] = "@block.outer",
+					["[L"] = "@loop.outer",
+					["[R"] = "@regex.outer",
+				},
+			},
+
+			lsp_interop = {
+				enable = true,
+				peek_definition_code = {
+					["<leader>kf"] = "@function.outer",
+					["<leader>kc"] = "@class.outer",
+				},
+			},
+		},
+	}
 
 	vim.keymap.set({ "n", "v" }, "<leader>co", function()
 		vim.cmd('TSContextToggle')

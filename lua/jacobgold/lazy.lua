@@ -102,10 +102,22 @@ require("lazy").setup({
 	},
 	{
 		'Wansmer/treesj',
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		cond = not vim.g.vscode
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		cond = not vim.g.vscode
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-refactor",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		cond = not vim.g.vscode
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		cond = not vim.g.vscode
 	},
 	{
