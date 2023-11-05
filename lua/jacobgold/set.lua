@@ -37,7 +37,8 @@ vim.o.smartcase = true
 vim.opt.termguicolors = true
 
 -- keep margin of 8 lines above/below
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 30
 vim.opt.signcolumn = "yes"
 
 -- allow @ in filenames
