@@ -31,6 +31,13 @@ if not vim.g.vscode then
 				apply = true
 			})
 		end, { buffer = bufnr, remap = false, desc = 'Apply first code action' })
+
+		vim.keymap.set(
+			"n",
+			"<leader>,",
+			vim.lsp.buf.code_action,
+			{ buffer = bufnr, remap = false, desc = 'Code actions list' }
+		)
 	end)
 
 	require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
