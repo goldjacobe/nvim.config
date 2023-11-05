@@ -32,4 +32,18 @@ if not vim.g.vscode then
 	vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 	vim.opt.foldlevelstart = 1
 	vim.opt.foldenable = false
+
+	-- split/join
+	local tsj = require('treesj')
+	tsj.setup({
+		use_default_keymaps = false,
+	})
+
+	-- map leader j to treesj toggle
+	vim.keymap.set(
+		'n',
+		'<leader>j',
+		tsj.toggle,
+		{ noremap = true, silent = true }
+	)
 end
