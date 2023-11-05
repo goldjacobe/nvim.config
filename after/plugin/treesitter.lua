@@ -126,6 +126,13 @@ if not vim.g.vscode then
 		vim.cmd('TSContextToggle')
 	end, { desc = 'Toggle treesitter context' })
 
+	vim.keymap.set(
+		{ "n", "v" },
+		"gC",
+		require('treesitter-context').go_to_context,
+		{ desc = 'Go to treesitter context' }
+	)
+
 	-- folding
 	vim.opt.foldmethod = 'expr'
 	vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
