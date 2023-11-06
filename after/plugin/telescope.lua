@@ -18,11 +18,17 @@ if not vim.g.vscode then
 					},
 				},
 			},
-		},
+			helpgrep = {
+				ignore_paths = {
+					vim.fn.stdpath("state") .. "/lazy/readme",
+				},
+			}
+		}
 	}
 
 	require("telescope").load_extension('fzf')
 	require("telescope").load_extension('harpoon')
+	require('telescope').load_extension('helpgrep')
 
 	local builtin = require('telescope.builtin')
 	vim.keymap.set({ 'n', 'v' }, '<leader>fr', function()

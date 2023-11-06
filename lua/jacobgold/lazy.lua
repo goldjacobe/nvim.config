@@ -77,6 +77,11 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
+		'catgoose/telescope-helpgrep.nvim',
+		dependencies = { 'nvim-telescope/telescope.nvim' },
+		cond = not vim.g.vscode
+	},
+	{
 		'prettier/vim-prettier',
 		cond = not vim.g.vscode
 	},
