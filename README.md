@@ -21,4 +21,4 @@ And this [repository](https://github.com/rockerBOO/awesome-neovim) has been a he
 
 Check out my `lazy.nvim` file to see the full list of plugins :)
 
-Best place to reach me with questions is **@jacob__gold** on Twitter, or file an issue here and I'll see it eventually :)
+Best place to reach me with questions is [@jacob__gold](https://twitter.com/jacob__gold) on Twitter, or file an issue here and I'll see it eventually :)
