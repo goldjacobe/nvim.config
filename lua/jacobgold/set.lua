@@ -51,4 +51,4 @@ vim.opt.updatetime = 20
 -- marker at column 80
 vim.opt.colorcolumn = "80"
 
-vim.opt.cmdwinheight = 10
+vim.opt.cmdwinheight = 20
