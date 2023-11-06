@@ -1,6 +1,7 @@
 if not vim.g.vscode then
 	require("notify").setup({
-		background_colour = "#000000",
+		background_colour = nil,
+		fps = 1
 	})
 
 	require("noice").setup({
