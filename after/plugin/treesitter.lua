@@ -153,19 +153,6 @@ if not vim.g.vscode then
 	vim.opt.foldlevel = 99
 	vim.opt.foldlevelstart = 99
 
-	if true then
-		if true then
-			print('hello')
-		end
-		if false then
-			if true then
-				print('hello')
-			end
-			if true then
-				print('hello')
-			end
-		end
-	end
 	-- split/join
 	local tsj = require('treesj')
 	tsj.setup({
