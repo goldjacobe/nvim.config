@@ -15,6 +15,15 @@ vim.keymap.set(
 
 vim.keymap.set(
 	'n',
+	'<leader>gc',
+	function()
+		vim.cmd('Git commit')
+	end,
+	{ desc = 'Fugitive commit' }
+)
+
+vim.keymap.set(
+	'n',
 	'<leader>gb',
 	function() vim.cmd('Git blame') end,
 	{ desc = 'Fugitive blame' }
