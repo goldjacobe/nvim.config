@@ -7,29 +7,6 @@ vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = 'Toggle wrap' })
 vim.keymap.set("n", "<leader>o", "o<ESC>", { desc = 'New line below' })
 vim.keymap.set("n", "<leader>O", "O<ESC>", { desc = 'New line above' })
 
--- swap splits
-vim.keymap.set(
-	{ "n", "v" },
-	"<leader>vx",
-	":wincmd x <CR>",
-	{ silent = true, desc = 'Swap windows' }
-)
-
--- switch a split to vertical
-vim.keymap.set(
-	{ "n", "v" },
-	"<leader>vh",
-	":vertical wincmd H <CR>",
-	{ silent = true, desc = 'Move window to left' }
-)
-
-vim.keymap.set(
-	{ "n", "v" },
-	"<leader>vl",
-	":vertical wincmd L <CR>",
-	{ silent = true, desc = 'Move window to right' }
-)
-
 -- delete a file and go to last buffer
 vim.keymap.set({ "n", "v" }, "<leader>rm", function()
 	local buf = vim.api.nvim_get_current_buf()
