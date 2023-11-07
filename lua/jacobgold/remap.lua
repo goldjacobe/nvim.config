@@ -7,6 +7,14 @@ vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = 'Toggle wrap' })
 vim.keymap.set("n", "<leader>o", "o<ESC>", { desc = 'New line below' })
 vim.keymap.set("n", "<leader>O", "O<ESC>", { desc = 'New line above' })
 
+vim.keymap.set("n", "D", function()
+	if vim.fn.getline(vim.fn.line('.')) == "" then
+		vim.cmd("normal! dd")
+	else
+		vim.cmd("normal! D")
+	end
+end, { desc = 'Delete to end of line' })
+
 -- delete a file and go to last buffer
 vim.keymap.set({ "n", "v" }, "<leader>rm", function()
 	local buf = vim.api.nvim_get_current_buf()
