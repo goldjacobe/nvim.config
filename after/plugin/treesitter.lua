@@ -147,9 +147,25 @@ if not vim.g.vscode then
 	-- folding
 	vim.opt.foldmethod = 'expr'
 	vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-	vim.opt.foldlevelstart = 1
+	vim.opt.foldcolumn = '1'
+	vim.opt.fillchars = 'foldopen:,foldclose:,foldsep: ,eob: ,fold: '
 	vim.opt.foldenable = false
+	vim.opt.foldlevel = 99
+	vim.opt.foldlevelstart = 99
 
+	if true then
+		if true then
+			print('hello')
+		end
+		if false then
+			if true then
+				print('hello')
+			end
+			if true then
+				print('hello')
+			end
+		end
+	end
 	-- split/join
 	local tsj = require('treesj')
 	tsj.setup({
