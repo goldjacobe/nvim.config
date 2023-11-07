@@ -1,3 +1,6 @@
+-- always split right
+vim.o.splitright = true
+
 -- cursorline
 vim.opt.cursorline = true
 
