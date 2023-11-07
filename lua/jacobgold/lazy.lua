@@ -13,6 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		'goldjacobe/globalcolor',
+		cond = not vim.g.vscode
+	},
+	{
 		'gorbit99/codewindow.nvim',
 		cond = not vim.g.vscode
 	},
