@@ -4,6 +4,11 @@ if not vim.g.vscode then
 			layout_config = { prompt_position = 'top' },
 			sorting_strategy = 'ascending'
 		},
+		pickers = {
+			colorscheme = {
+				enable_preview = true,
+			},
+		},
 		extensions = {
 			file_browser = {
 				--				theme = "ivy",
