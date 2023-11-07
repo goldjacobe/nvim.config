@@ -39,6 +39,8 @@ vim.o.smartcase = true
 
 vim.opt.termguicolors = true
 
+vim.opt.startofline = true
+
 -- keep margin of 8 lines above/below
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 30
