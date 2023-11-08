@@ -24,7 +24,7 @@ if not vim.g.vscode then
 		},
 		winbar = {
 			lualine_a = { 'mode' },
-			lualine_b = {},
+			lualine_b = { { 'filename', path = 1 } },
 			lualine_c = {},
 			lualine_x = {},
 			lualine_y = { 'progress' },
@@ -39,7 +39,7 @@ if not vim.g.vscode then
 			lualine_z = {}
 		},
 		tabline = {
-			lualine_a = {'buffers'},
+			lualine_a = { 'buffers' },
 			lualine_b = {},
 			lualine_c = {},
 			lualine_x = {
