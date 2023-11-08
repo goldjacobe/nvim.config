@@ -15,7 +15,7 @@ require("lazy").setup({
 	{
 		"chrisgrieser/nvim-origami",
 		event = "BufReadPost", -- later or on keypress would prevent saving folds
-		opts = true,        -- needed even when using default config
+		opts = true,         -- needed even when using default config
 	},
 	{
 		'goldjacobe/globalcolor',
@@ -91,7 +91,7 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
-		'prettier/vim-prettier',
+		'goldjacobe/vim-prettier',
 		cond = not vim.g.vscode
 	},
 	{
