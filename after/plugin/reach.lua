@@ -15,4 +15,8 @@ if not vim.g.vscode then
 	vim.keymap.set("n", "<leader>m", function()
 		vim.cmd(':ReachOpen marks')
 	end, { desc = 'Reach marks' })
+
+	vim.keymap.set("n", "<leader>cs", function()
+		vim.cmd(':ReachOpen colorschemes')
+	end, { desc = 'Reach colorschemes' })
 end
