@@ -1,11 +1,17 @@
 if not vim.g.vscode then
-	require('reach').setup({
+	local reach = require('reach')
+	reach.setup {
 		notifications = true
-	})
+	}
 
 	vim.keymap.set("n", "<leader>b", function()
-		vim.cmd(':ReachOpen buffers')
+		reach.buffers {
+			handle = 'dynamic',
+			show_current = true,
+			sort = function(a, b) return a < b end,
+		}
 	end, { desc = 'Reach buffers' })
+
 	vim.keymap.set("n", "<leader>m", function()
 		vim.cmd(':ReachOpen marks')
 	end, { desc = 'Reach marks' })
