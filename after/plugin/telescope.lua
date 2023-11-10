@@ -63,7 +63,11 @@ if not vim.g.vscode then
 	vim.keymap.set({ 'n', 'v' }, '<leader>fc', builtin.current_buffer_fuzzy_find, { desc = 'Current buffer' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fh', function()
 		vim.cmd('Telescope harpoon marks')
-	end, { desc = '' })
+	end, { desc = 'Harpoon' })
+
+	vim.keymap.set({ 'n', 'v' }, '<leader>fH', function()
+		vim.cmd('Telescope helpgrep')
+	end, { desc = 'Helpgrep' })
 
 	vim.keymap.set({ 'n', 'v' }, '<leader>fq', builtin.quickfix, { desc = 'Quickfix' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>ft', builtin.builtin, { desc = 'Telescopes' })
