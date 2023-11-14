@@ -57,3 +57,5 @@ vim.opt.updatetime = 20
 vim.opt.colorcolumn = "80"
 
 vim.opt.cmdwinheight = 20
+
+vim.opt.autoread = true
