@@ -5,3 +5,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 		vim.highlight.on_yank({ timeout = 200 })
 	end
 })
+
+local cursor_hold_checktime = vim.api.nvim_create_augroup('cursor_hold_checktime', {})
+vim.api.nvim_create_autocmd('CursorHold', {
+	group = cursor_hold_checktime,
+	pattern = '*',
+	command = "checktime"
+})
+
