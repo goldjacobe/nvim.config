@@ -1,5 +1,17 @@
 vim.g.mapleader = " "
 
+-- copy filepath
+vim.keymap.set(
+	"n",
+	"<leader>cp",
+	function()
+		vim.fn.setreg("+", vim.fn.expand("%:p"))
+	end,
+	{
+		desc = 'Copy absolute path of buffer to clipboard',
+	}
+)
+
 -- toggle wrap
 vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = 'Toggle wrap' })
 
