@@ -59,7 +59,17 @@ if not vim.g.vscode then
 		}
 	end, { desc = 'Grep string (specify)' })
 
-	vim.keymap.set({ 'n', 'v' }, '<leader>fo', builtin.buffers, { desc = 'Buffers' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fo', function()
+		builtin.buffers({
+			attach_mappings = function(_, map)
+				map("n", "d", require('telescope.actions').delete_buffer, {
+					desc = 'Delete buffer',
+				})
+				-- map defaults
+				return true
+			end,
+		})
+	end, { desc = 'Buffers' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fc', builtin.current_buffer_fuzzy_find, { desc = 'Current buffer' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fh', function()
 		vim.cmd('Telescope harpoon marks')
