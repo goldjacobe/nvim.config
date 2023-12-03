@@ -6,6 +6,14 @@ if not vim.g.vscode then
 
 	vim.keymap.set("n", "<leader>b", function()
 		reach.buffers {
+			handle = 'auto',
+			show_current = true,
+			sort = function(a, b) return a < b end,
+		}
+	end, { desc = 'Reach buffers' })
+
+	vim.keymap.set("n", "<leader>B", function()
+		reach.buffers {
 			handle = 'dynamic',
 			show_current = true,
 			sort = function(a, b) return a < b end,
