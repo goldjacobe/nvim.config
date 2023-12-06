@@ -49,5 +49,24 @@ if not vim.g.vscode then
 		}
 	})
 
+	vim.keymap.set(
+		'n',
+		'<leader>lr',
+		function()
+			vim.cmd('LspRestart')
+		end,
+		{ noremap = true, desc = 'Restart LSP' }
+	)
+
+
+	vim.keymap.set(
+		'n',
+		'<leader>li',
+		function()
+			vim.cmd('LspInfo')
+		end,
+		{ noremap = true, desc = 'LSP info' }
+	)
+
 	lsp.setup()
 end
