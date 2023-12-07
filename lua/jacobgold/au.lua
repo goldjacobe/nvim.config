@@ -10,6 +10,6 @@ local cursor_hold_checktime = vim.api.nvim_create_augroup('cursor_hold_checktime
 vim.api.nvim_create_autocmd('CursorHold', {
 	group = cursor_hold_checktime,
 	pattern = '*',
-	command = "checktime"
+	-- https://neovim.discourse.group/t/au-cursorhold-checktime-breaks-the-command-line-window/967/3
+	command = "if expand(\"%f\") != \"[Command Line]\" | checktime | endif"
 })
-
