@@ -1,6 +1,12 @@
 if not vim.g.vscode then
 	local harpoon = require("harpoon")
 
+	harpoon:setup {
+		settings = {
+			save_on_toggle = true,
+		}
+	}
+
 	vim.keymap.set("n", "<leader>a", function()
 		harpoon:list():append()
 	end, { desc = 'Harpoon add mark' })
