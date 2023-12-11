@@ -2,8 +2,8 @@ vim.api.nvim_create_user_command(
 	'Graphite',
 	function(table)
 		local output = vim.fn.system { 'gt', 'ls', '--no-interactive' }
-		local width = 200;
-		local height = 50;
+		local width = 150;
+		local height = 40;
 
 		local bufnr = vim.api.nvim_create_buf(false, true)
 		vim.api.nvim_buf_set_var(bufnr, 'modifiable', false)
@@ -28,18 +28,19 @@ vim.api.nvim_create_user_command(
 			vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, { line })
 		end
 
-		vim.api.nvim_buf_set_lines(bufnr, 0, 1, false, { 'Press enter on a line to checkout that branch' })
+		vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, { 'Press enter on a line to checkout that branch' })
 		vim.keymap.set('n', '<CR>', function()
 			if (vim.fn.line('.') == 1) then
 				return
 			end
-			local coOutput = vim.fn.system {
+			local coOutput = vim.fn.systemlist {
 				'gt',
 				'checkout',
+				'--no-interactive',
 				branches[vim.fn.line('.') - 1],
 			}
-			vim.api.nvim_win_close(win_id, true)
-			print(coOutput)
+
+			vim.api.nvim_buf_set_lines(bufnr, #branches + 1, -1, false, coOutput)
 		end, { noremap = true, silent = true, buffer = bufnr })
 	end,
 	{}
