@@ -164,6 +164,6 @@ if not vim.g.vscode then
 		'n',
 		'<leader>j',
 		tsj.toggle,
-		{ noremap = true, silent = true }
+		{ desc = 'TreeSJ toggle', noremap = true, silent = true }
 	)
 end
