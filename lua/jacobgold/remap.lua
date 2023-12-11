@@ -43,11 +43,8 @@ vim.keymap.set({ "n", "v" }, "<leader>\\", vim.cmd.vsplit, { desc = 'Vertical sp
 vim.keymap.set({ "n", "v" }, "<leader>/", vim.cmd.split, { desc = 'Horizontal split' })
 
 -- buffer stuff
-vim.keymap.set({ "n", "v" }, "<leader>td", vim.cmd.bd, { desc = 'Delete buffer' })
-vim.keymap.set({ "n", "v" }, "<leader>th", vim.cmd.bfirst, { desc = 'First buffer' })
-vim.keymap.set({ "n", "v" }, "<leader>tj", vim.cmd.bprev, { desc = 'Previous buffer' })
-vim.keymap.set({ "n", "v" }, "<leader>tk", vim.cmd.bnext, { desc = 'Next buffer' })
-vim.keymap.set({ "n", "v" }, "<leader>tl", vim.cmd.blast, { desc = 'Last buffer' })
+vim.keymap.set({ "n", "v" }, "<leader>[b", vim.cmd.bprev, { desc = 'Previous buffer' })
+vim.keymap.set({ "n", "v" }, "<leader>]b", vim.cmd.bnext, { desc = 'Next buffer' })
 
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
