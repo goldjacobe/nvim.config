@@ -89,9 +89,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = 'Copy line to clipboard' })
 -- delete without writing to buffer
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- capital Q is the worst thing ever apparently
-vim.keymap.set("n", "Q", "<nop>")
-
 -- quickfix navigation
 vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz", { desc = 'Next quickfix item' })
 vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz", { desc = 'Previous quickfix item' })
