@@ -1,5 +1,15 @@
 vim.g.mapleader = " "
 
+-- float diagnostics with leader K
+vim.keymap.set(
+	"n",
+	"<leader>K",
+	function()
+		vim.diagnostic.open_float()
+	end,
+	{ desc = 'Show line diagnostics' }
+)
+
 -- copy filepath
 vim.keymap.set(
 	"n",
