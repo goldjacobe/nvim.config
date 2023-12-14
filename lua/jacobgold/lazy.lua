@@ -13,6 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		'jinh0/eyeliner.nvim',
+	},
+	{
 		"chrisgrieser/nvim-origami",
 		event = "BufReadPost", -- later or on keypress would prevent saving folds
 		opts = true,         -- needed even when using default config
