@@ -61,12 +61,26 @@ if not vim.g.vscode then
 
 	vim.keymap.set(
 		'n',
+		'<leader>ls',
+		function()
+			vim.cmd('LspStart')
+		end,
+		{ noremap = true, desc = 'Start LSP' }
+	)
+	vim.keymap.set(
+		'n',
 		'<leader>li',
 		function()
 			vim.cmd('LspInfo')
 		end,
 		{ noremap = true, desc = 'LSP info' }
 	)
+
+	vim.keymap.set('n', '<leader>lf', function()
+		vim.lsp.buf.format {
+			filter = function(client) return client.name ~= "tsserver" end
+		}
+	end, { noremap = true, desc = 'Format buffer' })
 
 	lsp.setup()
 end
