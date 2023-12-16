@@ -4,14 +4,6 @@ if not vim.g.vscode then
 		notifications = true
 	}
 
-	vim.keymap.set("n", "<leader>b", function()
-		reach.buffers {
-			handle = 'auto',
-			show_current = true,
-			sort = function(a, b) return a < b end,
-		}
-	end, { desc = 'Reach buffers' })
-
 	local last_active_times = {}
 	local track_last_active_time = vim.api.nvim_create_augroup('track_last_active_time_for_reach', {})
 	vim.api.nvim_create_autocmd('BufEnter', {
@@ -21,7 +13,7 @@ if not vim.g.vscode then
 		end
 	})
 
-	vim.keymap.set("n", "<leader>B", function()
+	vim.keymap.set("n", "<leader>b", function()
 		reach.buffers {
 			handle = 'dynamic',
 			show_current = true,
