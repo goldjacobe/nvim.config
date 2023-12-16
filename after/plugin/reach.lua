@@ -28,7 +28,6 @@ if not vim.g.vscode then
 			sort = function(a, b)
 				local atime = last_active_times[a]
 				local btime = last_active_times[b]
-				print(a, b, atime, btime)
 				if not atime and not btime then return a < b end
 				if not atime then return false end
 				if not btime then return true end
