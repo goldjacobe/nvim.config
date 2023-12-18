@@ -41,6 +41,14 @@ if not vim.g.vscode then
 	end)
 
 	require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+	require('lspconfig').tsserver.setup({
+		init_options = {
+			preferences = {
+				importModuleSpecifierPreference = 'relative',
+				importModuleSpecifierEnding = 'auto',
+			},
+		}
+	})
 
 
 	lsp.format_on_save({
