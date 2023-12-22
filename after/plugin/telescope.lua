@@ -36,9 +36,8 @@ if not vim.g.vscode then
 	require('telescope').load_extension('helpgrep')
 
 	local builtin = require('telescope.builtin')
-	vim.keymap.set({ 'n', 'v' }, '<leader>fr', function()
-		vim.cmd('Telescope resume')
-	end, { desc = 'Resume last telescope' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fr', builtin.resume, { desc = 'Resume last telescope' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fp', builtin.pickers, { desc = 'Pick a picker' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>ff', builtin.find_files, { desc = 'Files' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fg', builtin.git_files, { desc = 'Git files' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fG', builtin.git_status, { desc = 'Git status' })
@@ -70,7 +69,11 @@ if not vim.g.vscode then
 			end,
 		})
 	end, { desc = 'Buffers' })
-	vim.keymap.set({ 'n', 'v' }, '<leader>fc', builtin.current_buffer_fuzzy_find, { desc = 'Current buffer' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fO', builtin.current_buffer_fuzzy_find, { desc = 'Current buffer' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fq', builtin.quickfix, { desc = 'Quickfix' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fQ', builtin.quickfixhistory, { desc = 'Quickfix history' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fc', builtin.commands, { desc = 'Commands' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fC', builtin.command_history, { desc = 'Command history' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fh', function()
 		vim.cmd('Telescope harpoon marks')
 	end, { desc = 'Harpoon' })
@@ -79,8 +82,8 @@ if not vim.g.vscode then
 		vim.cmd('Telescope helpgrep')
 	end, { desc = 'Helpgrep' })
 
-	vim.keymap.set({ 'n', 'v' }, '<leader>fq', builtin.quickfix, { desc = 'Quickfix' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>ft', builtin.builtin, { desc = 'Telescopes' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fd', builtin.diagnostics, { desc = 'Diagnostics' })
 
 	require("telescope").load_extension "file_browser"
 

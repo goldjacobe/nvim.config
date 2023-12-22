@@ -91,4 +91,60 @@ if not vim.g.vscode then
 	end, { noremap = true, desc = 'Format buffer' })
 
 	lsp.setup()
+	local tb = require('telescope.builtin')
+
+	vim.keymap.set(
+		'n',
+		'<leader>lr',
+		tb.lsp_references,
+		{ noremap = true, desc = 'LSP references' }
+	)
+	vim.keymap.set(
+		'n',
+		'<leader>ld',
+		tb.lsp_definitions,
+		{ noremap = true, desc = 'LSP definitions' }
+	)
+	vim.keymap.set(
+		'n',
+		'<leader>lt',
+		tb.lsp_type_definitions,
+		{ noremap = true, desc = 'LSP type definitions' }
+	)
+	vim.keymap.set(
+		'n',
+		'<leader>ln',
+		tb.lsp_incoming_calls,
+		{ noremap = true, desc = 'LSP incoming calls' }
+	)
+	vim.keymap.set(
+		'n',
+		'<leader>lo',
+		tb.lsp_outgoing_calls,
+		{ noremap = true, desc = 'LSP outgoing calls' }
+	)
+	vim.keymap.set(
+		'n',
+		'<leader>lc',
+		tb.lsp_document_symbols,
+		{ noremap = true, desc = 'LSP document symbols' }
+	)
+	vim.keymap.set(
+		'n',
+		'<leader>lw',
+		tb.lsp_workspace_symbols,
+		{ noremap = true, desc = 'LSP workspace symbols' }
+	)
+	vim.keymap.set(
+		'n',
+		'<leader>ly',
+		tb.lsp_dynamic_workspace_symbols,
+		{ noremap = true, desc = 'LSP dynamic workspace symbols' }
+	)
+	vim.keymap.set(
+		'n',
+		'<leader>lm',
+		tb.lsp_implementations,
+		{ noremap = true, desc = 'LSP implementations' }
+	)
 end
