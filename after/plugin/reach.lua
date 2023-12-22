@@ -15,7 +15,17 @@ if not vim.g.vscode then
 
 	vim.keymap.set("n", "<leader>b", function()
 		reach.buffers {
-			handle = 'dynamic',
+			handle = 'auto',
+			auto_handles = {
+				'a', 'r', 's', 't', 'g', 'm', 'n', 'e', 'i', 'o',
+				'q', 'w', 'f', 'p', 'b', 'j', 'l', 'u', 'y',
+				'z', 'x', 'c', 'd', 'v', 'k', 'h',
+				'1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+				'A', 'R', 'S', 'T', 'G', 'M', 'N', 'E', 'I', 'O',
+				'Q', 'W', 'F', 'P', 'B', 'J', 'L', 'U', 'Y',
+				'Z', 'X', 'C', 'D', 'V', 'K', 'H',
+				'!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
+			},
 			show_current = true,
 			sort = function(a, b)
 				local atime = last_active_times[a]
