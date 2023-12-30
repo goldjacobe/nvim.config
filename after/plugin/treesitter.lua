@@ -68,7 +68,7 @@ if not vim.g.vscode then
 					["il"] = { query = "@loop.inner", desc = 'inner loop' },
 					["ar"] = { query = "@regex.outer", desc = 'a regex' },
 					["ir"] = { query = "@regex.inner", desc = 'inner regex' },
-					["gc"] = { query = "@comment.outer", desc = 'comment' },
+					["agc"] = { query = "@comment.outer", desc = 'comment' },
 				},
 			},
 

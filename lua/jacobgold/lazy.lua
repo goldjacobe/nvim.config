@@ -65,9 +65,6 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
-		'numToStr/Comment.nvim',
-	},
-	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		cond = not vim.g.vscode
@@ -198,5 +195,10 @@ require("lazy").setup({
 	{
 		'github/copilot.vim',
 		cond = not vim.g.vscode
-	}
+	},
+	{
+		'numToStr/Comment.nvim',
+		opts = {},
+		lazy = false,
+	},
 })
