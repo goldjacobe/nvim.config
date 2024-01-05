@@ -59,7 +59,7 @@ if not vim.g.vscode then
 
 	vim.keymap.set(
 		'n',
-		'<leader>lr',
+		'<leader>le',
 		function()
 			vim.cmd('LspRestart')
 		end,
