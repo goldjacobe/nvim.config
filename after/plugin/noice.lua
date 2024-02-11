@@ -24,6 +24,10 @@ if not vim.g.vscode then
 	})
 
 
+	vim.keymap.set("n", "<leader>nd", function()
+		require("noice").cmd("dismiss")
+	end, { desc = 'Dismiss' })
+
 	vim.keymap.set("n", "<leader>nl", function()
 		require("noice").cmd("last")
 	end, { desc = 'Show last message' })
