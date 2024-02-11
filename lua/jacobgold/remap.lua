@@ -11,15 +11,11 @@ vim.keymap.set(
 )
 
 -- copy filepath
-vim.keymap.set(
-	"n",
-	"<leader>cp",
-	function()
-		vim.fn.setreg("+", vim.fn.expand("%:p"))
-	end,
-	{
-		desc = 'Copy absolute path of buffer to clipboard',
-	}
+vim.keymap.set("n", "<leader>cp", function() vim.fn.setreg("+", vim.fn.expand("%:p")) end,
+	{ desc = 'Copy absolute path of buffer to clipboard', }
+)
+vim.keymap.set("n", "<leader>cr", function() vim.fn.setreg("+", vim.fn.expand("%")) end,
+	{ desc = 'Copy relative path of buffer to clipboard', }
 )
 
 -- toggle wrap
