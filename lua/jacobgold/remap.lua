@@ -1,5 +1,12 @@
 vim.g.mapleader = " "
 
+
+-- transparent background with leader ct
+vim.keymap.set("n", "<leader>ct", function()
+	vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+	vim.cmd("hi NonText guibg=NONE ctermbg=NONE")
+end, { desc = 'Transparent background' })
+
 -- float diagnostics with leader K
 vim.keymap.set(
 	"n",

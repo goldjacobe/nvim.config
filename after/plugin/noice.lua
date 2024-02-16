@@ -1,6 +1,6 @@
 if not vim.g.vscode then
 	require("notify").setup({
-		background_colour = nil,
+		background_colour = "#000000",
 		fps = 1
 	})
 
