@@ -59,6 +59,7 @@ vim.keymap.set({ "n", "v" }, "<leader>/", vim.cmd.split, { desc = 'Horizontal sp
 vim.keymap.set({ "n", "v" }, "[b", vim.cmd.bprev, { desc = 'Previous buffer' })
 vim.keymap.set({ "n", "v" }, "]b", vim.cmd.bnext, { desc = 'Next buffer' })
 vim.keymap.set("n", "<leader>cb", function() vim.cmd("%bd|e#|bd#") end, { desc = 'Clear buffers' })
+vim.keymap.set("n", "<leader>cB", function() vim.cmd("%bd!|e#|bd#") end, { desc = 'Clear buffers (even if modified)' })
 
 -- don't copy to register when deleting characters
 vim.keymap.set("n", "x", '"_x')
