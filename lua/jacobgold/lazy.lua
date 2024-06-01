@@ -13,6 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({})
+		end,
+		cond = not vim.g.vscode
+	},
+	{
 		'jinh0/eyeliner.nvim',
 	},
 	{
@@ -190,11 +197,6 @@ require("lazy").setup({
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 			{ 'L3MON4D3/LuaSnip' },  -- Required
 		}
-	},
-
-	{
-		'github/copilot.vim',
-		cond = not vim.g.vscode
 	},
 	{
 		'numToStr/Comment.nvim',
