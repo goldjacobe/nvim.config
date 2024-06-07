@@ -41,6 +41,7 @@ if not vim.g.vscode then
 	vim.keymap.set({ 'n', 'v' }, '<leader>ff', function()
 		builtin.find_files {
 			hidden = true,
+			file_ignore_patterns = { "node_modules", ".git", ".yarn" },
 		}
 	end, {
 		desc = 'Files',
