@@ -133,6 +133,10 @@ if not vim.g.vscode then
 		},
 	}
 
+	local context = require("treesitter-context")
+	context.setup { enable = false }
+
+
 	vim.keymap.set({ "n", "v" }, "<leader>co", function()
 		vim.cmd('TSContextToggle')
 	end, { desc = 'Toggle treesitter context' })
@@ -140,7 +144,7 @@ if not vim.g.vscode then
 	vim.keymap.set(
 		{ "n", "v" },
 		"gC",
-		require('treesitter-context').go_to_context,
+		context.go_to_context,
 		{ desc = 'Go to treesitter context' }
 	)
 
