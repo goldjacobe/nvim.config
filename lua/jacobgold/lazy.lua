@@ -20,9 +20,6 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
-		'jinh0/eyeliner.nvim',
-	},
-	{
 		"chrisgrieser/nvim-origami",
 		event = "BufReadPost", -- later or on keypress would prevent saving folds
 		opts = true,         -- needed even when using default config
