@@ -46,8 +46,8 @@ if not vim.g.vscode then
 	end, {
 		desc = 'Files',
 	})
-	vim.keymap.set({ 'n', 'v' }, '<leader>fg', builtin.git_files, { desc = 'Git files' })
-	vim.keymap.set({ 'n', 'v' }, '<leader>fG', builtin.git_status, { desc = 'Git status' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fG', builtin.git_files, { desc = 'Git files' })
+	vim.keymap.set({ 'n', 'v' }, '<leader>fg', builtin.git_status, { desc = 'Git status' })
 
 	vim.keymap.set({ 'n', 'v' }, '<leader>fl', builtin.live_grep, { desc = 'Live grep' })
 	vim.keymap.set({ 'n', 'v' }, '<leader>fL', function()
