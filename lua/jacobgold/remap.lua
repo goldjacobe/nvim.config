@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
 
+-- save with control s
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = 'Save file' })
+-- save all with leader control s
+vim.keymap.set("n", "<leader><C-s>", ":wa<CR>", { desc = 'Save all' })
 
 -- transparent background with leader ct
 vim.keymap.set("n", "<leader>ct", function()
