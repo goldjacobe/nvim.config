@@ -11,7 +11,7 @@ if not vim.g.vscode then
 	lsp.preset('recommended')
 
 	lsp.ensure_installed({
-		'tsserver',
+		'ts_ls',
 		'eslint',
 	})
 
@@ -41,7 +41,7 @@ if not vim.g.vscode then
 	end)
 
 	require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-	require('lspconfig').tsserver.setup({
+	require('lspconfig').ts_ls.setup({
 		init_options = {
 			preferences = {
 				importModuleSpecifierPreference = 'relative',
@@ -86,7 +86,7 @@ if not vim.g.vscode then
 
 	vim.keymap.set('n', '<leader>lf', function()
 		vim.lsp.buf.format {
-			filter = function(client) return client.name ~= "tsserver" end
+			filter = function(client) return client.name ~= "ts_ls" end
 		}
 	end, { noremap = true, desc = 'Format buffer' })
 
