@@ -62,3 +62,6 @@ vim.opt.autoread = true
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- auto-session told me to do this
+vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
