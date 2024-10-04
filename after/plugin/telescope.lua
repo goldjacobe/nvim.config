@@ -66,6 +66,8 @@ if not vim.g.vscode then
 		}
 	end, { desc = 'Grep string (specify)' })
 
+	vim.keymap.set({ 'n', 'v' }, '<leader>fP', '<cmd>Telescope session-lens<CR>', { desc = 'Session lens' })
+
 	vim.keymap.set({ 'n', 'v' }, '<leader>fo', function()
 		builtin.buffers({
 			attach_mappings = function(_, map)
