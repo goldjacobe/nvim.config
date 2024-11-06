@@ -11,6 +11,20 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+---@param bufnr integer
+---@param ... string
+---@return string
+local function first(bufnr, ...)
+	local conform = require("conform")
+	for i = 1, select("#", ...) do
+		local formatter = select(i, ...)
+		if conform.get_formatter_info(formatter, bufnr).available then
+			return formatter
+		end
+	end
+	return select(1, ...)
+end
+
 require("lazy").setup({
 	{
 		"supermaven-inc/supermaven-nvim",
@@ -95,8 +109,24 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
-		'goldjacobe/vim-prettier',
-		cond = not vim.g.vscode
+		'stevearc/conform.nvim',
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		cond = not vim.g.vscode,
+		opts = {
+			formatters_by_ft = {
+				markdown = function(bufnr)
+					return { first(bufnr, "prettierd", "prettier"), "injected" }
+				end,
+			},
+			-- Set default options
+			default_format_opts = {
+				lsp_format = "fallback",
+			},
+			-- Set up format-on-save
+			format_on_save = { timeout_ms = 500 },
+			-- Customize formatters
+		},
 	},
 	{
 		'rose-pine/neovim',
