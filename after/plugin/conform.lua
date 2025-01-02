@@ -15,45 +15,36 @@ end
 
 conform.setup {
 	formatters = {
-		prettierd = {
-			require_cwd = true,
-		},
-		prettier = {
+		biome = {
 			require_cwd = true,
 		},
 	},
 	formatters_by_ft = {
 		markdown = function(bufnr)
-			return { first(bufnr, "prettierd", "prettier"), "injected" }
+			return { first(bufnr, "biome"), "injected" }
 		end,
 		typescript = {
-			'prettierd',
-			'prettier',
+			'biome',
 			stop_after_first = true,
 		},
 		typescriptreact = {
-			'prettierd',
-			'prettier',
+			'biome',
 			stop_after_first = true,
 		},
 		javascript = {
-			'prettierd',
-			'prettier',
+			'biome',
 			stop_after_first = true,
 		},
 		javascriptreact = {
-			'prettierd',
-			'prettier',
+			'biome',
 			stop_after_first = true,
 		},
 		graphql = {
-			'prettierd',
-			'prettier',
+			'biome',
 			stop_after_first = true,
 		},
 		css = {
-			'prettierd',
-			'prettier',
+			'biome',
 			stop_after_first = true,
 			filetypes = {
 				"css",
