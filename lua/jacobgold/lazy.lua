@@ -95,12 +95,6 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
-		'stevearc/conform.nvim',
-		event = { "BufWritePre" },
-		cmd = { "ConformInfo" },
-		cond = not vim.g.vscode,
-	},
-	{
 		'rose-pine/neovim',
 		cond = not vim.g.vscode
 	},
