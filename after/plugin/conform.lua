@@ -17,6 +17,9 @@ conform.setup {
 	formatters = {
 		biome = {
 			require_cwd = true,
+			args = {
+				'--colors force'
+			},
 		},
 	},
 	formatters_by_ft = {
