@@ -177,19 +177,29 @@ require("lazy").setup({
 		cond = not vim.g.vscode
 	},
 	{
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		dependencies = {
-			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },          -- Required
-			{ 'williamboman/mason.nvim' },        -- Optional
-			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },  -- Required
-			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-			{ 'L3MON4D3/LuaSnip' },  -- Required
-		}
+		'neovim/nvim-lspconfig',
+		cond = not vim.g.vscode
+	},
+	{
+		'williamboman/mason-lspconfig.nvim',
+		cond = not vim.g.vscode
+	},
+	{
+		'williamboman/mason.nvim',
+		cond = not vim.g.vscode,
+		config = {}
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		cond = not vim.g.vscode
+	},
+	{
+		"hrsh7th/cmp-nvim-lsp",
+		cond = not vim.g.vscode,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		cond = not vim.g.vscode
 	},
 	{
 		'numToStr/Comment.nvim',
