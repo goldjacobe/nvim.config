@@ -1,17 +1,24 @@
 if not vim.g.vscode then
-	require('cmp').setup {
+	local cmp = require('cmp')
+	cmp.setup {
 		mapping = {
 			['<Tab>'] = function(fallback) fallback() end,
 			['<S-Tab>'] = function(fallback) fallback() end
-		}
+		},
+		sources = cmp.config.sources({
+			{ name = 'nvim_lsp' },
+		}, {
+			{ name = 'buffer' },
+		})
 	}
 
-	local lspconfig_defaults = require('lspconfig').util.default_config
-	lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-		'force',
-		lspconfig_defaults.capabilities,
-		require('cmp_nvim_lsp').default_capabilities()
-	)
+
+	-- Set up lspconfig.
+	local capabilities = require('cmp_nvim_lsp').default_capabilities()
+	require('lspconfig')['ts-ls'].setup {
+		capabilities = capabilities
+	}
+
 
 	local buffer_autoformat = function(bufnr)
 		local group = 'lsp_autoformat'
